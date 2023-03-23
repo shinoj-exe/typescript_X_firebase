@@ -13,18 +13,24 @@ const Navbar = () => {
   }
 
   return (
-    <div>
+    <div className='navbar'>
+      <div className="links">
+
         <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
+        { !user ? 
+          <Link to="/login">Login</Link>:
+          <Link to="/createpost">Create Post</Link>
+        }
+      </div>
 
           <div className='user'>
             {
               user && 
-              <div>
+              <>
                 <p>{user?.displayName}</p>
-                <img src={user?.photoURL || ""} width="100px" height="100px" />
+                <img src={user?.photoURL || ""} width="20px" height="20px" />
                 <button onClick={signUserOut}>Log Out</button>
-              </div>
+              </>
             }
         </div>
     </div>
