@@ -4,7 +4,7 @@ import CreateForm from './createForm'
 const CreatePost = () => {
   return (
   <div>
-      <div><CreateForm/></div>
+      <div className="create-post"><CreateForm/></div>
   </div>
 
   )
